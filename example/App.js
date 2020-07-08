@@ -27,7 +27,7 @@ export default class App extends Component {
     let atomPayment = NativeModules.AtomPayment;
     let netB = { discriminator: 'All', 
     merchantId: '197', 
-    txnscamt: '0', 
+    txnscamt: '0.0', 
     loginid: '197', 
     password: 'Test@123', 
     txncurr: 'INR', 
@@ -53,9 +53,9 @@ export default class App extends Component {
             netB.optionalUdf9 = "Chetan";
     atomPayment.goForAtomPayment(netB, (error, response) => {
       if (error) {
-        console.error(error);
+      //  console.error(error);
       } else {
-        console.error(response);
+       // console.error(response);
       }
     });
   };

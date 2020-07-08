@@ -29,7 +29,7 @@ RCT_EXPORT_METHOD(goForAtomPayment:(NSDictionary *)details callback:(RCTResponse
     NSAssert([details valueForKey:@"custacc"], @"custacc can not be nil");
     NSAssert([details valueForKey:@"amt"], @"amt can not be nil");
     NSAssert([details valueForKey:@"txnid"], @"txnid can not be nil");
-   // NSAssert([details valueForKey:@"date"], @"date can not be nil");
+    NSAssert([details valueForKey:@"date"], @"date can not be nil");
     NSAssert([details valueForKey:@"bankid"], @"bankid can not be nil");
     NSAssert([details valueForKey:@"signatureRequest"], @"signatureRequest can not be nil");
     NSAssert([details valueForKey:@"signatureResponse"], @"signatureResponse can not be nil");
@@ -48,7 +48,7 @@ RCT_EXPORT_METHOD(goForAtomPayment:(NSDictionary *)details callback:(RCTResponse
     netB.custacc=[details valueForKey:@"custacc"];
     netB.amt = [details valueForKey:@"amt"];
     netB.txnid = [details valueForKey:@"txnid"];
-    netB.date = @"23/08/2019 11:57:00";//[details valueForKey:@"date"];
+    netB.date = [details valueForKey:@"date"];
     netB.bankid = [details valueForKey:@"bankid"];
     netB.signatureRequest = [details valueForKey:@"signatureRequest"];
     netB.signatureResponse = [details valueForKey:@"signatureResponse"];
@@ -87,10 +87,9 @@ RCT_EXPORT_METHOD(goForAtomPayment:(NSDictionary *)details callback:(RCTResponse
   NSLog(@"received---->%@",getResult);
   
   double delayInSeconds = 2.0;
-  dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-  dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-    NSDictionary * response = @{@"reslult": getResult, @"response": ResponseValueArray};
-    self.responseHandler(@[[NSNull null], response]);
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      NSDictionary * response = @{@"result": getResult, @"response": ResponseValueArray};
+         self.responseHandler(@[[NSNull null], response]);
   });
 }
 
