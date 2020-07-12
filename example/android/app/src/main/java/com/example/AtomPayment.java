@@ -1,23 +1,20 @@
 package com.example;
-import com.facebook.react.bridge.NativeModule;
-import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
-import com.facebook.react.bridge.ReactContextBaseJavaModule;
-import com.facebook.react.bridge.ActivityEventListener;
-import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
-import java.util.Map;
-import java.util.HashMap;
 
 import android.app.Activity;
 import android.content.Intent;
 
-import com.facebook.react.bridge.ReadableMap;
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import com.atom.mpsdklibrary.PayActivity;
+import com.facebook.react.bridge.ActivityEventListener;
+import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeMap;
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.Arrays;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -107,19 +104,20 @@ public class AtomPayment extends ReactContextBaseJavaModule implements ActivityE
                 String message = data.getStringExtra("status");
                 String[] resKey = data.getStringArrayExtra("responseKeyArray");
                 String[] resValue = data.getStringArrayExtra("responseValueArray");
-                if(resKey!=null && resValue!=null)
-                {
-                    for(int i=0; i<resKey.length; i++)
-                        System.out.println("  "+i+" resKey : "+resKey[i]+" resValue : "+resValue[i]);
-                }
 
                 //Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+                WritableMap resultData = new WritableNativeMap();
+                resultData.putString("result", message);
+                String joinedString = Arrays.toString(resValue);
+                resultData.putString("response", joinedString);
                 System.out.println("RECEIVED BACK--->" + message);
-                nativeCallback.invoke(null, resValue);
+                nativeCallback.invoke(null, resultData);
             } else {
                 nativeCallback.invoke("Error in Payment", null);
             }
 
+        } else  {
+            nativeCallback.invoke("Error in Payment", null);
         }
     }
 
