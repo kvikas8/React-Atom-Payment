@@ -17,9 +17,16 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* exampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* exampleTests.m */; };
 		4DED29FEE2E70C80F7E9CEB2 /* libPods-example-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9F3106778B54B81A0F5423 /* libPods-example-tvOSTests.a */; };
-		4E05D852249DF06C00F10932 /* blank_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E05D851249DF06C00F10932 /* blank_background.png */; };
-		4E94B45C248E1AEC00025BD8 /* resourcesLib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E94B455248E1AEC00025BD8 /* resourcesLib.bundle */; };
-		4E94B45D248E1AEC00025BD8 /* libAtomPayLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E94B45B248E1AEC00025BD8 /* libAtomPayLib.a */; };
+		4E4DCA1B24D555520014579A /* blank_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E4DCA1124D555510014579A /* blank_background.png */; };
+		4E4DCA1C24D555520014579A /* nb.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DCA1324D555520014579A /* nb.m */; };
+		4E4DCA1D24D555520014579A /* card.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DCA1424D555520014579A /* card.m */; };
+		4E4DCA1E24D555520014579A /* WKWebView+FLWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DCA1524D555520014579A /* WKWebView+FLWKWebView.m */; };
+		4E4DCA1F24D555520014579A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DCA1924D555520014579A /* Reachability.m */; };
+		4E4DCA2524D555BD0014579A /* NSData+DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DCA2324D555BD0014579A /* NSData+DES.m */; };
+		4E4DCA2624D555BD0014579A /* NSString+DES.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4DCA2424D555BD0014579A /* NSString+DES.m */; };
+		4E4DCA2A24D5566B0014579A /* atom-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E4DCA2724D5566B0014579A /* atom-logo.png */; };
+		4E4DCA2B24D5566B0014579A /* addpage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E4DCA2824D5566B0014579A /* addpage.png */; };
+		4E4DCA2C24D5566B0014579A /* arrow-leftx66.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E4DCA2924D5566B0014579A /* arrow-leftx66.png */; };
 		4E94B460248E22B900025BD8 /* AtomPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E94B45F248E22B900025BD8 /* AtomPayment.m */; };
 		794FE7D97EB47A8F8DF480E2 /* libPods-example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2DAEAC6F2F65F42BD1B5614 /* libPods-example.a */; };
 		84DADF44964DDFB9E8EC87DB /* libPods-example-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B1E31B826B368CB2CEBE86 /* libPods-example-tvOS.a */; };
@@ -62,15 +69,23 @@
 		2D02E4901E0B4A5D006451C7 /* example-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "example-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3933737E7C938FC9DF1CF2B2 /* Pods-example-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-example-tvOS/Pods-example-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4B9F3106778B54B81A0F5423 /* libPods-example-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-example-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E05D851249DF06C00F10932 /* blank_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank_background.png; sourceTree = "<group>"; };
-		4E94B454248E1AEC00025BD8 /* nb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nb.h; sourceTree = "<group>"; };
-		4E94B455248E1AEC00025BD8 /* resourcesLib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = resourcesLib.bundle; sourceTree = "<group>"; };
-		4E94B456248E1AEC00025BD8 /* NSData+DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DES.h"; sourceTree = "<group>"; };
-		4E94B457248E1AEC00025BD8 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		4E94B458248E1AEC00025BD8 /* card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = card.h; sourceTree = "<group>"; };
-		4E94B459248E1AEC00025BD8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		4E94B45A248E1AEC00025BD8 /* NSString+DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DES.h"; sourceTree = "<group>"; };
-		4E94B45B248E1AEC00025BD8 /* libAtomPayLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAtomPayLib.a; sourceTree = "<group>"; };
+		4E4DCA1024D555510014579A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4E4DCA1124D555510014579A /* blank_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank_background.png; sourceTree = "<group>"; };
+		4E4DCA1224D555510014579A /* nb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nb.h; sourceTree = "<group>"; };
+		4E4DCA1324D555520014579A /* nb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nb.m; sourceTree = "<group>"; };
+		4E4DCA1424D555520014579A /* card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = card.m; sourceTree = "<group>"; };
+		4E4DCA1524D555520014579A /* WKWebView+FLWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+FLWKWebView.m"; sourceTree = "<group>"; };
+		4E4DCA1624D555520014579A /* card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = card.h; sourceTree = "<group>"; };
+		4E4DCA1724D555520014579A /* WKWebView+FLWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+FLWKWebView.h"; sourceTree = "<group>"; };
+		4E4DCA1824D555520014579A /* FLWebViewProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLWebViewProvider.h; sourceTree = "<group>"; };
+		4E4DCA1924D555520014579A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4E4DCA2124D555BD0014579A /* NSString+DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DES.h"; sourceTree = "<group>"; };
+		4E4DCA2224D555BD0014579A /* NSData+DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DES.h"; sourceTree = "<group>"; };
+		4E4DCA2324D555BD0014579A /* NSData+DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DES.m"; sourceTree = "<group>"; };
+		4E4DCA2424D555BD0014579A /* NSString+DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DES.m"; sourceTree = "<group>"; };
+		4E4DCA2724D5566B0014579A /* atom-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atom-logo.png"; sourceTree = "<group>"; };
+		4E4DCA2824D5566B0014579A /* addpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addpage.png; sourceTree = "<group>"; };
+		4E4DCA2924D5566B0014579A /* arrow-leftx66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-leftx66.png"; sourceTree = "<group>"; };
 		4E94B45E248E22B900025BD8 /* AtomPayment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AtomPayment.h; path = example/AtomPayment.h; sourceTree = "<group>"; };
 		4E94B45F248E22B900025BD8 /* AtomPayment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AtomPayment.m; path = example/AtomPayment.m; sourceTree = "<group>"; };
 		54AA70E07B154432A85BB3FB /* Pods-example-exampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-exampleTests.release.xcconfig"; path = "Target Support Files/Pods-example-exampleTests/Pods-example-exampleTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +113,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				794FE7D97EB47A8F8DF480E2 /* libPods-example.a in Frameworks */,
-				4E94B45D248E1AEC00025BD8 /* libAtomPayLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,34 +185,26 @@
 		4E94B451248E1AEC00025BD8 /* Atom */ = {
 			isa = PBXGroup;
 			children = (
-				4E05D851249DF06C00F10932 /* blank_background.png */,
-				4E94B452248E1AEC00025BD8 /* include */,
-				4E94B45B248E1AEC00025BD8 /* libAtomPayLib.a */,
+				4E4DCA2824D5566B0014579A /* addpage.png */,
+				4E4DCA2924D5566B0014579A /* arrow-leftx66.png */,
+				4E4DCA2724D5566B0014579A /* atom-logo.png */,
+				4E4DCA1124D555510014579A /* blank_background.png */,
+				4E4DCA1624D555520014579A /* card.h */,
+				4E4DCA1424D555520014579A /* card.m */,
+				4E4DCA1824D555520014579A /* FLWebViewProvider.h */,
+				4E4DCA1224D555510014579A /* nb.h */,
+				4E4DCA1324D555520014579A /* nb.m */,
+				4E4DCA1024D555510014579A /* Reachability.h */,
+				4E4DCA1924D555520014579A /* Reachability.m */,
+				4E4DCA1724D555520014579A /* WKWebView+FLWKWebView.h */,
+				4E4DCA1524D555520014579A /* WKWebView+FLWKWebView.m */,
+				4E4DCA2224D555BD0014579A /* NSData+DES.h */,
+				4E4DCA2324D555BD0014579A /* NSData+DES.m */,
+				4E4DCA2124D555BD0014579A /* NSString+DES.h */,
+				4E4DCA2424D555BD0014579A /* NSString+DES.m */,
 			);
 			name = Atom;
 			path = example/Atom;
-			sourceTree = "<group>";
-		};
-		4E94B452248E1AEC00025BD8 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				4E94B453248E1AEC00025BD8 /* AtomPayLib */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		4E94B453248E1AEC00025BD8 /* AtomPayLib */ = {
-			isa = PBXGroup;
-			children = (
-				4E94B454248E1AEC00025BD8 /* nb.h */,
-				4E94B455248E1AEC00025BD8 /* resourcesLib.bundle */,
-				4E94B456248E1AEC00025BD8 /* NSData+DES.h */,
-				4E94B457248E1AEC00025BD8 /* Product.h */,
-				4E94B458248E1AEC00025BD8 /* card.h */,
-				4E94B459248E1AEC00025BD8 /* Reachability.h */,
-				4E94B45A248E1AEC00025BD8 /* NSString+DES.h */,
-			);
-			path = AtomPayLib;
 			sourceTree = "<group>";
 		};
 		67E11DB2FF786CC59942797C /* Pods */ = {
@@ -336,14 +342,16 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1160;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = GNR9DXQ53V;
 						LastSwiftMigration = 1120;
+						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -390,9 +398,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				4E4DCA2B24D5566B0014579A /* addpage.png in Resources */,
+				4E4DCA2A24D5566B0014579A /* atom-logo.png in Resources */,
+				4E4DCA1B24D555520014579A /* blank_background.png in Resources */,
+				4E4DCA2C24D5566B0014579A /* arrow-leftx66.png in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				4E05D852249DF06C00F10932 /* blank_background.png in Resources */,
-				4E94B45C248E1AEC00025BD8 /* resourcesLib.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,9 +593,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4DCA1D24D555520014579A /* card.m in Sources */,
+				4E4DCA2524D555BD0014579A /* NSData+DES.m in Sources */,
+				4E4DCA1E24D555520014579A /* WKWebView+FLWKWebView.m in Sources */,
 				4E94B460248E22B900025BD8 /* AtomPayment.m in Sources */,
+				4E4DCA2624D555BD0014579A /* NSString+DES.m in Sources */,
+				4E4DCA1F24D555520014579A /* Reachability.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				4E4DCA1C24D555520014579A /* nb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +654,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 279BDC7C4C9535A5F94379C2 /* Pods-example-exampleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -661,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54AA70E07B154432A85BB3FB /* Pods-example-exampleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = exampleTests/Info.plist;
@@ -683,8 +701,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNR9DXQ53V;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/example/Atom/include/AtomPayLib",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
@@ -695,14 +721,16 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/example/Atom",
+					"$(PROJECT_DIR)/example/Atom/include/AtomPayLib/MPSDKKit.framework",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.paperscorer;
 				PRODUCT_NAME = example;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -715,21 +743,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GNR9DXQ53V;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/example/Atom/include/AtomPayLib",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/example/Atom",
+					"$(PROJECT_DIR)/example/Atom/include/AtomPayLib/MPSDKKit.framework",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.paperscorer;
 				PRODUCT_NAME = example;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

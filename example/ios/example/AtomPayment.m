@@ -37,58 +37,54 @@ RCT_EXPORT_METHOD(goForAtomPayment:(NSDictionary *)details callback:(RCTResponse
     NSAssert([details valueForKey:@"isLive"], @"isLive can not be nil");
     NSAssert([details valueForKey:@"ru"], @"ru can not be nil");
     nb *netB = [[nb alloc]init];
-    netB.discriminator = [details valueForKey:@"discriminator"] ;
+   // netB.discriminator = [details valueForKey:@"discriminator"] ;
     netB.myDelegate = self;
-    netB.merchantId = [details valueForKey:@"merchantId"];
+//    netB.merchantId = [details valueForKey:@"merchantId"];
     netB.txnscamt =[details valueForKey:@"txnscamt"];
     netB.loginid = [details valueForKey:@"loginid"];
-    netB.password = [details valueForKey:@"password"];
+   netB.password = [details valueForKey:@"password"];
     netB.txncurr = [details valueForKey:@"txncurr"];
     netB.clientcode=[details valueForKey:@"clientcode"];
     netB.custacc=[details valueForKey:@"custacc"];
     netB.amt = [details valueForKey:@"amt"];
     netB.txnid = [details valueForKey:@"txnid"];
     netB.date = [details valueForKey:@"date"];
-    netB.bankid = [details valueForKey:@"bankid"];
-    netB.signatureRequest = [details valueForKey:@"signatureRequest"];
-    netB.signatureResponse = [details valueForKey:@"signatureResponse"];
+//    netB.bankid = [details valueForKey:@"bankid"];
+    netB.reqHashKey = [details valueForKey:@"signatureRequest"];
+    netB.resHashKey = [details valueForKey:@"signatureResponse"];
     netB.prodid = [details valueForKey:@"prodid"];
-    netB.isLive = [[details valueForKey:@"isLive"] boolValue];
-    netB.ru = [details valueForKey:@"ru"];
-    if ([details valueForKey:@"customerName"]){
-      netB.customerName = [details valueForKey:@"customerName"];
-    }
-    if ([details valueForKey:@"customerEmailID"]){
-      netB.customerEmailID = [details valueForKey:@"customerEmailID"];
-    }
-    if ([details valueForKey:@"customerMobileNo"]){
-      netB.customerMobileNo = [details valueForKey:@"customerMobileNo"];
-    }
-    if ([details valueForKey:@"billingAddress"]){
-      netB.billingAddress = [details valueForKey:@"billingAddress"];
-    }
-    if ([details valueForKey:@"optionalUdf9"]){
-      netB.optionalUdf9 = [details valueForKey:@"optionalUdf9"];
-    }
-    
+//   // netB.isLive = [[details valueForKey:@"isLive"] boolValue];
+//    netB.ru = [details valueForKey:@"ru"];
+////    if ([details valueForKey:@"customerName"]){
+////      netB.udf1 = [details valueForKey:@"customerName"];
+////    }
+////    if ([details valueForKey:@"customerEmailID"]){
+////      netB.udf2 = [details valueForKey:@"customerEmailID"];
+////    }
+////    if ([details valueForKey:@"customerMobileNo"]){
+////      netB.udf3 = [details valueForKey:@"customerMobileNo"];
+////    }
+////    if ([details valueForKey:@"billingAddress"]){
+////      netB.udf4 = [details valueForKey:@"billingAddress"];
+////    }
+////    if ([details valueForKey:@"optionalUdf9"]){
+////      netB.udf4 = [details valueForKey:@"optionalUdf9"];
+////    }
+//
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    if (@available(iOS 13.0, *)) {
 //      [netB setModalPresentationStyle: UIModalPresentationFullScreen];
 //    }
+
+
+
     [delegate.window.rootViewController presentViewController:netB animated:YES completion:nil];
   });
 }
 
--(void) secondviewcontrollerDissmissed:(NSString *)stringToFirst withResponseKeys:(NSMutableArray *)ResponseKeyArray andResponseValues:(NSMutableArray *)ResponseValueArray {
-  NSString *getResult;
-  getResult = stringToFirst;
-  
-  //[self performSelector:@selector([self]) withObject:nil afterDelay:5];``
-  NSLog(@"received---->%@",getResult);
-  
-  double delayInSeconds = 2.0;
-  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-      NSDictionary * response = @{@"result": getResult, @"response": ResponseValueArray};
+- (void)secondviewcontrollerDissmissed:(NSMutableArray *)getResult {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    NSDictionary * response = @{@"result": @"OK", @"response": getResult};
          self.responseHandler(@[[NSNull null], response]);
   });
 }

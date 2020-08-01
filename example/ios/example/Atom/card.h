@@ -2,29 +2,28 @@
 //  card.h
 //  WebView
 //
-//  Created by ATOM TECHNOLOGIES on 10/05/18.
-//  Copyright (c) 2018 ATOM TECHNOLOGIES. All rights reserved.
+//  Created by ATOM TECHNOLOGIES on 10/15/13.
+//  Copyright (c) 2013 ATOM TECHNOLOGIES. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "Reachability.h"
-#import "Product.h"
+#import <WebKit/WebKit.h>
+#import "FLWebViewProvider.h"
 
 #define statusTag 0
 @protocol cardDelegate <NSObject>
--(void) secondviewcontrollerDissmissed:(NSString *)stringForFirst withResponseKeys:(NSMutableArray *)ResponseKeyArray andResponseValues:(NSMutableArray *)ResponseValueArray;
+-(void) secondviewcontrollerDissmissed:(NSMutableArray *)stringForFirst;
 
 @end
-  
-  
 
-@interface card : UIViewController <UITextFieldDelegate, UIWebViewDelegate,UIAlertViewDelegate,NSXMLParserDelegate,UIScrollViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
+
+
+@interface card : UIViewController <UITextFieldDelegate, UIWebViewDelegate,UIAlertViewDelegate,NSXMLParserDelegate,UIScrollViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource,WKNavigationDelegate, WKUIDelegate>
 {
-    /*
-   // UIWebView *codeviewWeb;
-    UIWebView *viewWeb;
+    //WKWebView *codeviewWeb;
+   // WKWebView *viewWeb;
     UIImageView *imageView;
-  
+    
     NSString *merchantId;
     NSString *txnscamt;
     NSString *loginid;
@@ -38,7 +37,7 @@
     NSString *amt;
     NSString *txnid;
     NSString *date;
-   
+    
     NSString *cardData;
     NSString *cardNumber;
     NSString *cvv;
@@ -52,21 +51,10 @@
     NSString *mdd;
     NSString *ru;
     
-    NSString *surcharge;
-    NSString *signatureRequest;
-    NSString *signatureResponse;
-
-    // Optional Parameters
-    NSString *customerName;
-    NSString *customerEmailID;
-    NSString *customerMobileNo;
-    NSString *billingAddress;
-    NSString *optionalUdf9;
-    NSString *mprod;
     
     UIPickerView *yearPickerView;
     UIPickerView *monthPickerView;
-   
+    
     UIPickerView *pickerView;
     
     NSMutableArray *yeardataArray;
@@ -74,20 +62,18 @@
     NSString *selectedCategory;
     
     NSString *navText;
-     */
-    
-    Reachability* reachability;
 }
 
 
-
-@property (weak, nonatomic) IBOutlet UIImageView *imgBackGround;
-@property (strong, nonatomic) IBOutlet UIWebView *viewWeb;
-//@property (strong, nonatomic) IBOutlet UIWebView *codeviewWeb;
+@property (nonatomic) UIView <FLWebViewProvider> *viewWeb;
+//@property (strong, nonatomic) IBOutlet WKWebView *viewWeb;
+@property (strong, nonatomic) IBOutlet WKWebView *codeviewWeb;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic,retain) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic,retain)  UIImageView *imageView;
 @property (nonatomic,assign) id <cardDelegate> myDelegate;
+@property (strong, nonatomic) IBOutlet UILabel *waitLabel;
+
 
 
 @property (strong, nonatomic) NSString *merchantId;
@@ -114,23 +100,9 @@
 @property (strong, nonatomic) NSString *cardtype;
 @property (strong, nonatomic) NSString *cardAssociate;
 
-// Optional Parameters
-@property (strong, nonatomic) NSString *customerName;
-@property (strong, nonatomic) NSString *customerEmailID;
-@property (strong, nonatomic) NSString *customerMobileNo;
-@property (strong, nonatomic) NSString *billingAddress;
-@property (strong, nonatomic) NSString *optionalUdf9;
-
 @property (strong, nonatomic) NSString *mdd;
 @property (strong, nonatomic) NSString *ru;
 
-@property (strong, nonatomic) NSString *signatureRequest;
-@property (strong, nonatomic) NSString *signatureResponse;
-@property (strong, nonatomic) NSString *surcharge;
-//@property (strong, nonatomic) NSString *mprod;
-@property (strong, nonatomic) NSMutableArray<Product *> *mProds;
-
-@property (assign, nonatomic) bool isLive;
 
 @property (strong, nonatomic) NSString *navText;
 
@@ -143,7 +115,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *cardEdhexpmn;
 @property (strong, nonatomic) IBOutlet UITextField *cardhEdCvv;
 @property (strong, nonatomic) IBOutlet UIButton *pay;
-@property (weak, nonatomic) IBOutlet UIButton *btn;
 
 
 @property (nonatomic, retain) UIPickerView *yearPickerView;
@@ -160,14 +131,24 @@
 @property (strong, nonatomic) IBOutlet UIView *secondView;
 
 @property (strong, nonatomic) IBOutlet UIView *middleView;
-@property (nonatomic,retain)  UILabel *waitLabel;
 
 
 
+//-(void) setNavBarColor:(CGFloat)red :(CGFloat)green : (CGFloat)blue : (CGFloat) alpha;
+//-(void) setNavBarText:(NSString *)title;
+//
+//-(void) setFirstViewColor:(CGFloat)red :(CGFloat)green : (CGFloat)blue : (CGFloat) alpha;
+//-(void) setSecondViewColor:(CGFloat)red :(CGFloat)green : (CGFloat)blue : (CGFloat) alpha;
+//-(void) setMiddleViewColor:(CGFloat)red :(CGFloat)green : (CGFloat)blue : (CGFloat) alpha;
+//
+//-(void) setPayButtonColor:(CGFloat)red :(CGFloat)green : (CGFloat)blue : (CGFloat) alpha;
+
+- (IBAction)cancelNav:(id)sender;
 -(void)dismiss;
 
 -(void)cardinitialCall;
 
+//-(void)loadInitialView;
 
 
 
